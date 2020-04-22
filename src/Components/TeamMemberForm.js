@@ -9,7 +9,7 @@ function TeamMemberForm (props){
         onSubmit
     } = props
 
-const StyledForm = styled.div`
+const StyledForm = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,14 +20,14 @@ const StyledForm = styled.div`
     padding: 12px;
     background-color: white;
     width: 50%;
-
+    margin-left:25%;
 
 `
 
 
     return(
         <StyledForm>
-        <form className='teamMember-container'>
+        
             <h2>Team Member Form</h2>
             <label>Name:&nbsp;
         <input
@@ -52,7 +52,7 @@ const StyledForm = styled.div`
             <label>
             <button onClick={onSubmit}>Submit</button>
            </label>
-         </form>
+         
          </StyledForm>
     )
 }

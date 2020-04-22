@@ -14,7 +14,7 @@ function TeamMember ({ details }) {
     padding: 12px;
     background-color: white;
     width: 50%;
-    
+    margin-left:25%;
     
     `
 
