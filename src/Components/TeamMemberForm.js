@@ -9,17 +9,24 @@ function TeamMemberForm (props){
             value={props.name}
             onChange={props.onInputChange}
           > <label>Email:</label>
+          </input>
           <input 
                 email="email"
                 value={props.email}
                 onChange={props.onInputChange}>
                   </input>  
-            <label>Role:</label></input>
+            <label>Role:</label>
              <input 
              role="role"
              value={props.role}
              onChange={props.onInputChange}>
              </input>
-            </form>
+            
+            <label>
+            <button onClick={props.onSubmit}>Submit</button>
+           </label>
+         </form>
     )
 }
+
+export default TeamMemberForm

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { v4 as uuid } from 'uuid';
+import TeamMemberForm from './Components/TeamMemberForm';
 
 
 const initialTeamList = [{
@@ -50,26 +51,11 @@ setFormValues(initialFormValues)
   return (
     <div className="container">
       <header><h1 style={{textAlign:'center'}}>Team Builder App</h1></header>
-      <form onSubmit={onSubmit}>
-      <label>Name:</label>
-      <input
-            name="name"
-            value={formValues.name}
-            onChange={onInputChange}
-          ></input>
-        <label>Email:</label>
-        <input 
-              email="email"
-              value={formValues.email}
-              onChange={onInputChange}>
-                </input>  
-          <label>Role:</label>
-          <input 
-                role="role"
-                value={formValues.role}
-                onChange={onInputChange}>
-                </input>
-      </form>
+      <TeamMemberForm
+      values={formValues}
+      onInputChange={onInputChange}
+      onSubmit={onSubmit}/>
+     
    </div>
   )
  
