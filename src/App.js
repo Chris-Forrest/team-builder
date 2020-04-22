@@ -18,7 +18,7 @@ const initialFormValues = [{
 }]
 
 export default function App(){
-const [teamMember, setTeamMember] = useState(initialTeamList);
+const [teamMembers, setTeamMembers] = useState(initialTeamList);
 
 const [formValues, setFormValues] = useState(initialFormValues);
 
@@ -41,21 +41,36 @@ const onSubmit = evt =>{
     email: formValues.email,
     role: formValues.role
   }
-setTeamMember([ ...teamMember, newTeamMember])
+setTeamMembers([ ...teamMembers, newTeamMember])
 setFormValues(initialFormValues)
 
-}
-
+ }
+ 
 
   return (
     <div className="container">
       <header><h1 style={{textAlign:'center'}}>Team Builder App</h1></header>
-      <form>
-      
+      <form onSubmit={onSubmit}>
+      <label>Name:</label>
+      <input
+            name="name"
+            value={formValues.name}
+            onChange={onInputChange}
+          ></input>
+        <label>Email:</label>
+        <input 
+              email="email"
+              value={formValues.email}
+              onChange={onInputChange}>
+                </input>  
+          <label>Role:</label>
+          <input 
+                role="role"
+                value={formValues.role}
+                onChange={onInputChange}>
+                </input>
       </form>
-      
-    </div>
-  );
+   </div>
+  )
+ 
 }
-
-
