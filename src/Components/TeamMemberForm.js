@@ -2,13 +2,6 @@ import React from 'react';
 import styled from 'styled-components'
 
 
-function TeamMemberForm (props){
-    const{
-        values,
-        onInputChange,
-        onSubmit
-    } = props
-
 const StyledForm = styled.form`
     display: flex;
     flex-direction: column;
@@ -23,6 +16,15 @@ const StyledForm = styled.form`
     margin-left:25%;
 
 `
+
+function TeamMemberForm (props){
+    const{
+        values,
+        onInputChange,
+        onSubmit
+    } = props
+
+
 
 
     return(
