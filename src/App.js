@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { v4 as uuid } from 'uuid';
 import TeamMemberForm from './Components/TeamMemberForm';
+import TeamMember from './Components/TeamMember';
 
 
 const initialTeamList = [{
@@ -51,10 +52,16 @@ setFormValues(initialFormValues)
   return (
     <div className="container">
       <header><h1 style={{textAlign:'center'}}>Team Builder App</h1></header>
+      <div className='teamMember-list'>
+        {teamMembers.map(member => {
+          return<TeamMember key={member.id} details={member}/>
+        })}
+      </div>
       <TeamMemberForm
       values={formValues}
       onInputChange={onInputChange}
-      onSubmit={onSubmit}/>
+      onSubmit={onSubmit}
+      />
      
    </div>
   )
